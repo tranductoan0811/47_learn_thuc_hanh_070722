@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h1 style="font-size: 18px;font-weight: bold; color: red;">Thực hành với dãy Fibonacci</h1>
+</head>
+<body>
+    <!-- dãy fibonacci: số liền sau bằng tổng hai số liền trước -->
+  <!-- vd: 1,1,2,3... -->
+  <script>
+
+    let num = prompt("Enter the number: ");
+    let countfirst = prompt("Enter number of first Fibonacci: ");
+    let num1 = 0;
+    let num2 = 1;
+    let fibo = 0;
+    let count = 0;
+    let count5 = 0;
+    
+    let sum = 0;
+    let sum7 = 0;
+    let sumfirst = 0;
+    let firstnum;
+
+    document.write("*******************" + "<br>" + "Số nhập vào là : " + num + "<br>" + countfirst + " số Fibonacci đầu tiên là : " + "<br>");
+
+    let i = num;
+    while (i > 0) {
+      
+      fibo = num1 + num2; //quy tắc:  mỗi phần tử luôn bằng tổng hai phần tử trước nó
+      num1 = num2; // gán vị trí số 1 với số 2 khi dãy tịnh tiếnimage.png
+      num2 = fibo; // hoán đổi vị trí số thứ 2 với số fibo
+      
+      count++;
+
+      if (count <= countfirst) {
+
+        document.write(num1 + ", ");
+        sumfirst +=num1;
+      }
+
+      if (num1 % 5 == 0) {
+        count5++;
+        if (count5 == 1) {
+
+          firstnum = num1;
+        }
+      }
+
+    
+      sum +=num1;
+      i--;
+     
+    }
+
+    if (firstnum === undefined) {
+        firstnum = 'Không có số fibonacci nào chia hết cho 5. ';
+      
+    }
+
+    document.write("<br>" + "************" + "<br>" + "Số lượng số Fibonacci là : " + count + "<br>");
+
+    document.write("Tổng các số fibo = " + sum + "<br>");
+
+    document.write("Tổng " + countfirst + " số fibo đầu tiên = " + sumfirst + "<br>");
+
+    document.write("<br>" + "************" + "<br>" + "Số Fibonacci đầu tiên chia hết cho 5 là: " + firstnum + "<br>");
+    
+    document.write("Tổng số lượng số fibo chia hết cho 5 = " + count5)
+
+  </script>
+  
+</body>
+
+
+
+</html>
